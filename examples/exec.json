@@ -1,0 +1,35 @@
+{
+  "stages": [
+    {
+      "name": "s1",
+      "preconditions": [],
+      "type": "base",
+      "options": {
+        "shell": "echo hello s1"
+      },
+      "manual": false
+    },
+    {
+      "name": "s2",
+      "preconditions": [
+        {
+          "stage_s1": "succeeded"
+        }
+      ],
+      "type": "base",
+      "options": {
+        "shell": "echo hello s2"
+      },
+      "manual": false
+    },
+    {
+      "name": "s3",
+      "preconditions": [],
+      "type": "base",
+      "options": {
+        "shell": "echo hello s3\necho hello s3-1"
+      },
+      "manual": false
+    }
+  ]
+}
